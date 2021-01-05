@@ -1,0 +1,42 @@
+<style type="text/css">
+
+    body {
+
+        background-color: whitesmoke;
+
+    }
+        
+    .testo_brand {
+
+        font-style: oblique;
+        color: black;
+
+    }
+
+    .testo_menu {
+
+        color: black;    
+
+    }
+
+    #center {
+
+        padding-top: 58px;
+
+    }
+
+    #card-bottom {
+
+        position: absolute;
+        bottom: 0;
+
+    }
+
+    .jumbotron {
+
+        background-image: url(boston.jpg);
+        min-height: 300px;
+
+    }
+        
+</style>
