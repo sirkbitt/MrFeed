@@ -9,4 +9,4 @@ There are some parts written in JavaScript, put at the bottom of the navbar.html
 I'm going to be busy (very busy, I'd say) with the core of the project: getting news from the world.
 Stay tuned and cooperate with me, if you want.
 
-sirkbitt
+Andrew
