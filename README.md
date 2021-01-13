@@ -1,7 +1,7 @@
 # MrFeed
 
 This project is aimed to make a RSS Feed in order to get news for any users.
-It is entirely written on HTML and CSS, using Bootstrap 5 framework. See Bootstrap documentation at https://getbootstrap.com.
+It is entirely written on HTML and CSS, using Bootstrap 5 framework and some little parts of PHP. See Bootstrap documentation at https://getbootstrap.com.
 There are some parts written in JavaScript, put at the bottom of the navbar.html file; they let me using navbar for all pages, loaded by the reference written in footer.
 
 # The core: feed!
