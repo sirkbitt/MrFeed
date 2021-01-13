@@ -14,4 +14,10 @@ Stay tuned and cooperate with me, if you want.
 Use git clone to get all files, then put them under your /www directory. I'm using Ampss local server (on Windows).
 Under the same directory you'll put also your JQuery and JQueryUI frameworks, but if you don't want to use them just delete src put on footer.
 
+# Update 13/01/2021
+
+contacts.html has been replaced with contacts.php. It allows to contact the admin of MrFeed (e.g., claims or suggestions) through a local SMTP server (I use Mail Enable).
+Comments are inside the file. It contains PHP on top and a function at the bottom to check if all fields are correctly filled or not. 
+That's not perfect, so if you have any pull please do it.
+
 Andrew
