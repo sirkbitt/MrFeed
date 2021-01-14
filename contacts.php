@@ -1,54 +1,95 @@
 <?php
 
+    ini_set('display_errors', 1);
+    ini_set("log_errors", 1);
+
+    if (error_reporting(E_WARNING) == true) {
+
+        error_log("Log error(s) and warning(s) active.", 0);
+
+    }
+
     $error = "";
 
     $successMessage = "";
 
-    if ($_POST) {
+    $errors = array();
 
-        if (!$_POST['recipient_php']) {
+    $i = 0;
 
-            $error .= "An email is required.<br>";
+    try {
 
-        }
+        if ($_POST) {
 
-        if (!$_POST['message_php']) {
+            
+            if (isset($_POST['recipient_php'])) {
 
-            $error .= "A message is required.<br>";
+                $error .= "An email is required.<br>";
+                
 
-        }
+            }
+            
 
-        if ($_POST['recipient_php'] && filter_var($_POST['recipient_php'], FILTER_VALIDATE_EMAIL) == false) {
+            if (isset($_POST['message_php'])) {
 
-            $error .= "The email address is invalid.<br>";  
+                $error .= "A message is required.<br>";
+                
 
-        }
+            }
 
-        if ($error != "") {
+            if (isset($_POST['recipient_php']) && filter_var($_POST['recipient_php'], FILTER_VALIDATE_EMAIL) == false) {
 
-            $error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form:</p>'.$error.'</div>';
+                $error .= "The email address is invalid.<br>"; 
+                
 
-        } else {
+            }
 
-            $emailTo = "customersupport@localhost";
+            if (isset($error)) {
 
-            $subject = "Claims";
-
-            $content = $_POST['message_php'];
-
-            $headers = "From: ".$_POST['recipient_php'];
-
-            if (mail($emailTo, $subject, $content, $headers)) {
-
-                $successMessage = '<div class="alert alert-success" role="alert">The message was sent succesfully!</div>';
+                $error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form:</p>'.$error.'</div>';
+                
 
             } else {
 
-                $error = '<div class="alert alert-danger" role="alert">Your message couldn\'t be sent.</div>';
+                $emailTo = "customersupport@localhost";
+
+                $subject = "Claims";
+
+                $content = $_POST['message_php'];
+
+                $headers = "From: ".$_POST['recipient_php'];
+
+                if (mail(isset($emailTo, $subject, $content, $headers))) {
+
+                    $successMessage = '<div class="alert alert-success" role="alert">The message was sent succesfully!</div>';
+
+                } else {
+
+                    $error = '<div class="alert alert-danger" role="alert">Your message couldn\'t be sent.</div>';
+                    
+
+                }
 
             }
 
         }
+
+    }
+
+    catch(Exception $e) {
+
+        array_push($errors, $e);
+
+        while ($i < sizeof($e)) {
+
+            print_r ($e[$i])."<br>";
+    
+            $i++;
+    
+            echo "<br>";
+    
+        }
+    
 
     }
 
