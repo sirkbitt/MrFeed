@@ -244,6 +244,7 @@
             });
 
             // Call navbar.html to put it on top;
+            // Comment it if you want to see warning(s) and error(s), otherwise the navbar could hide them.
 
             $(function(){
 
@@ -251,7 +252,7 @@
 
             });
 
-            // Verify if every input field(s) are filled or not;
+            // Verify if every input field(s) are filled or not, in order to activate "Save Changes" button (client side);
 
             function checkform() {
 
